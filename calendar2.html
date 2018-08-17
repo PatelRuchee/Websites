@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html> 
+  <head>
+
+    <title> Hump Calendar </title>
+	
+	<style>
+     body {
+      background: white;
+     } 
+     .container {
+      max-width: 1000px;
+      margin: auto;
+      front-family: monospace;
+     }
+     .month {
+      text-align: center;
+      background: #277EAD;
+      font-size: 2.8em; 
+      letter-spacing: 2px;
+      color: white; 
+      padding: 27px;
+      border: 3px solid green; 
+     }
+	table, th, td {
+      width: 100%;
+      table-layout: fixed; 
+      text-align: center; 
+      font-size: 25px;
+      border-collapse: collapse;
+      border: 3px white; 
+     }
+	 
+	 tr,th,td{
+	 padding: 20px;
+	 }
+	th{
+	background: #906BC9;
+	colour: white;
+	}
+	td{
+	background: #8CDA83;
+	}
+	
+	td:hover{
+	background: white;
+	}
+	/* Style The Dropdown Button */
+	.dropbtn {
+		background-color: #4CAF50;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+	}
+
+	/* The container <div> - needed to position the dropdown content */
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+
+	/* Dropdown Content (Hidden by Default) */
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+
+	/* Links inside the dropdown */
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
+
+	/* Change color of dropdown links on hover */
+	.dropdown-content a:hover {background-color: #f1f1f1}
+
+	/* Show the dropdown menu on hover */
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+
+	/* Change the background color of the dropdown button when the dropdown content is shown */
+	.dropdown:hover .dropbtn {
+		background-color: #3e8e41;
+	}
+     </style>
+
+  </head>
+
+  <body onload="createCells()">
+	 <script>
+    function createCells(){
+    var b = 1;
+    var cells = document.getElementsByClassName("calendarCell");
+    for (var j = 0; j < cells.length; j++){
+      var div1 = document.createElement("div");
+      div1.setAttribute("class", "dropdown");
+      var button1 = document.createElement("BUTTON");
+      
+      button1.setAttribute("class", "dropbtn"); 
+      button1.innerHTML = b;
+      b++; 
+      var div2 = document.createElement("div");
+      div2.setAttribute("class", "dropdown-content");
+      for (var i = 0; i < 4; i++){
+        var link = document.createElement("a");
+        link.setAttribute("href", "https://www.google.ca/");
+        link.innerHTML = "Function " + (i + 1);
+        div2.appendChild(link);
+      }
+      div1.appendChild(button1);
+      div1.appendChild(div2);
+      cell = cells[j];
+      cell.appendChild(div1);
+    }
+    }
+
+   </script>
+    <div class = "container">
+      <div class ="month">
+        <strong> March </strong>
+        <br>
+        <strong> 2018 </strong>
+      </div>
+        <table>
+          <tr>
+            <th> Sun </th>
+            <th> Mon </th>
+            <th> Tue </th>
+            <th> Wed </th>
+            <th> Thur </th>
+            <th> Fri </th>
+            <th> Sat </th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+          </tr>
+           <tr>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+			<td class="calendarCell"> </td>
+          </tr>
+           <tr>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+			<td class="calendarCell"> </td>
+          </tr>
+           <tr>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+			<td class="calendarCell"> </td>
+          </tr>
+           <tr>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+            <td class="calendarCell"> </td>
+			<td class="calendarCell"> </td>
+          </tr>
+        </table>
+  </body>
+</html> 
